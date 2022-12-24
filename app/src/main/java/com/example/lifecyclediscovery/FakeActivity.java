@@ -30,6 +30,7 @@ public class FakeActivity extends AppCompatActivity {
 
         Button goBackButton = (Button) findViewById(R.id.goBackButtonFakeActivity);
         Button copyButton = (Button) findViewById(R.id.copyButtonFakeActivity);
+        Button startSecondFakeActivityButton = (Button) findViewById(R.id.startSecondFakeActivityButton);
         TextView destTextView = (TextView) findViewById(R.id.destTextViewFakeActivity);
         EditText editText = (EditText) findViewById(R.id.editTextFakeActivity);
 
@@ -59,6 +60,15 @@ public class FakeActivity extends AppCompatActivity {
                         String textToCopy = String.valueOf(editText.getText());
                         destTextView.setText(textToCopy);
                         setTextToCopy(textToCopy);
+                    }
+                }
+        );
+        startSecondFakeActivityButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent fakeActivityIntent = new Intent(getApplicationContext(), SecondFakeActivity.class);
+                        startActivity(fakeActivityIntent);
                     }
                 }
         );

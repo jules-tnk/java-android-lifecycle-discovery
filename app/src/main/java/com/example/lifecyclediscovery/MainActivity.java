@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         Toast.makeText(MainActivity.this, "Click on start dialog button", Toast.LENGTH_LONG).show();
                         Log.i("CLICK BUTTON EVENT ", getLocalClassName() + " START DIALOG BUTTON");
+                        Intent fakeActivityIntent = new Intent(getApplicationContext(), DialogActivity.class);
+                        startActivity(fakeActivityIntent);
                     }
                 }
         );

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="225dp"
+    android:layout_height="120dp"
+    android:padding="12dip"
+    tools:context="com.example.lifecyclediscovery.DialogActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simple Dialog"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:paddingBottom="12dip"
+        />
+
+    <Button
+        android:id="@+id/btn_finish_dialog"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Close"
+        android:layout_gravity="center_horizontal"
+        />
+</LinearLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="225dp"
+    android:layout_height="120dp"
+    android:background="@color/light_blue"
+    android:padding="12dip"
+    tools:context="com.example.lifecyclediscovery.DialogActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simple Dialog"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textColor="@color/light_yellow"
+        android:paddingBottom="12dip"
+        />
+
+    <Button
+        android:id="@+id/btn_finish_dialog"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="close"
+        android:layout_gravity="center_horizontal"
+        android:onClick="finishDialog"
+        />
+</LinearLayout>-->
