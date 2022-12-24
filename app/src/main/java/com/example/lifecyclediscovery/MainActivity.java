@@ -1,5 +1,6 @@
 package com.example.lifecyclediscovery;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         Toast.makeText(MainActivity.this, "Click on fake activity button", Toast.LENGTH_LONG).show();
                         Log.i("CLICK BUTTON EVENT ", getLocalClassName() + " FAKE ACTIVITY BUTTON");
+                        Intent fakeActivityIntent = new Intent(getApplicationContext(), FakeActivity.class);
+                        startActivity(fakeActivityIntent);
                     }
                 }
         );

@@ -6,19 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".FakeActivity">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"
-        tools:ignore="MissingConstraints">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <Button
-            android:id="@+id/quitButtonFakeActivity"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quitter" />
-    </LinearLayout>
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/destTextViewFakeActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Hello Info" />
+
+            <EditText
+                android:id="@+id/editTextFakeActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:hint="Text to copy"/>
+
+            <Button
+                android:id="@+id/copyButtonFakeActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy" />
+
+            <Button
+                android:id="@+id/startSecondFakeActivityButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start second fake activity" />
+
+            <Button
+                android:id="@+id/goBackButtonFakeActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go back" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
