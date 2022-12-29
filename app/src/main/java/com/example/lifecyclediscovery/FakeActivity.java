@@ -11,11 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class FakeActivity extends AppCompatActivity {
-    Button goBackButton;
-    Button copyButton;
-    Button startSecondFakeActivityButton;
-    TextView destTextView;
-    EditText editText;
+    private Button goBackButton;
+    private Button copyButton;
+    private Button startSecondFakeActivityButton;
+    private TextView destTextView;
+    private EditText editText;
 
     private String textToCopy;
     private final String TEXT_TO_COPY_KEY="COPIED_TEXT";
@@ -116,9 +116,12 @@ public class FakeActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i("LIFECYCLE ", getLocalClassName() + " : onDestroy");
+        //the code bellow is put in comment
+        //to avoid the app closure whren going back to the main activity
+        /*
         if (isFinishing()){
             System.exit(0);
-        }
+        }*/
     }
 
     @Override

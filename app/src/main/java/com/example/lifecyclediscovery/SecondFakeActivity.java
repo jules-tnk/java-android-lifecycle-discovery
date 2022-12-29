@@ -57,9 +57,6 @@ public class SecondFakeActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i("LIFECYCLE ", getLocalClassName() + " : onDestroy");
-        if (isFinishing()){
-            System.exit(0);
-        }
     }
 
     @Override
