@@ -116,12 +116,6 @@ public class FakeActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i("LIFECYCLE ", getLocalClassName() + " : onDestroy");
-        //the code bellow is put in comment
-        //to avoid the app closure whren going back to the main activity
-        /*
-        if (isFinishing()){
-            System.exit(0);
-        }*/
     }
 
     @Override
