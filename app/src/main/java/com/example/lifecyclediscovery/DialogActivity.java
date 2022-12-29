@@ -12,6 +12,7 @@ public class DialogActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog);
 
@@ -26,7 +27,6 @@ public class DialogActivity extends AppCompatActivity {
                 }
         );
 
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 
 
