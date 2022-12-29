@@ -21,7 +21,7 @@ public class DialogActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        finishDialog();
+                        finish();
                     }
                 }
         );
@@ -29,9 +29,6 @@ public class DialogActivity extends AppCompatActivity {
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 
-    private void finishDialog(){
-        finish();
-    }
 
     @Override
     protected void onStart() {

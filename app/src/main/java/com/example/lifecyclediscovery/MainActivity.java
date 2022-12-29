@@ -10,15 +10,19 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button fakeActivityButton;
+    private Button startDialogButton;
+    private Button quitButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.i("LIFECYCLE ", getLocalClassName() + " : onCreate");
 
-        Button fakeActivityButton = (Button) findViewById(R.id.fakeActivityButton);
-        Button startDialogButton = (Button) findViewById(R.id.startDialogButton);
-        Button quitButton = (Button) findViewById(R.id.quitButton);
+        fakeActivityButton = (Button) findViewById(R.id.fakeActivityButton);
+        startDialogButton = (Button) findViewById(R.id.startDialogButton);
+        quitButton = (Button) findViewById(R.id.quitButton);
 
         fakeActivityButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -82,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i("LIFECYCLE ", getLocalClassName() + " : onDestroy");
-        if (!isFinishing()){
+        if (isFinishing()){
             System.exit(0);
         }
     }

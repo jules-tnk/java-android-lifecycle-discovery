@@ -11,6 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class FakeActivity extends AppCompatActivity {
+    Button goBackButton;
+    Button copyButton;
+    Button startSecondFakeActivityButton;
+    TextView destTextView;
+    EditText editText;
 
     private String textToCopy;
     private final String TEXT_TO_COPY_KEY="COPIED_TEXT";
@@ -28,11 +33,11 @@ public class FakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fake);
 
-        Button goBackButton = (Button) findViewById(R.id.goBackButtonFakeActivity);
-        Button copyButton = (Button) findViewById(R.id.copyButtonFakeActivity);
-        Button startSecondFakeActivityButton = (Button) findViewById(R.id.startSecondFakeActivityButton);
-        TextView destTextView = (TextView) findViewById(R.id.destTextViewFakeActivity);
-        EditText editText = (EditText) findViewById(R.id.editTextFakeActivity);
+        goBackButton = (Button) findViewById(R.id.goBackButtonFakeActivity);
+        copyButton = (Button) findViewById(R.id.copyButtonFakeActivity);
+        startSecondFakeActivityButton = (Button) findViewById(R.id.startSecondFakeActivityButton);
+        destTextView = (TextView) findViewById(R.id.destTextViewFakeActivity);
+        editText = (EditText) findViewById(R.id.editTextFakeActivity);
 
         if (savedInstanceState!=null){
             String copiedText = savedInstanceState.getString(TEXT_TO_COPY_KEY);
@@ -45,12 +50,15 @@ public class FakeActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(FakeActivity.this, "Click on go back button", Toast.LENGTH_LONG).show();
+                        Toast.makeText(FakeActivity.this,
+                                "Click on go back button",
+                                Toast.LENGTH_LONG).show();
                         Log.i("CLICK BUTTON EVENT ", getLocalClassName() + " GO BACK BUTTON");
                         finish();
                     }
                 }
         );
+
         copyButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -78,6 +86,45 @@ public class FakeActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(TEXT_TO_COPY_KEY, getTextToCopy());
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("LIFECYCLE ", getLocalClassName() + " : onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("LIFECYCLE ", getLocalClassName() + " : onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("LIFECYCLE ", getLocalClassName() + " : onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("LIFECYCLE ", getLocalClassName() + " : onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("LIFECYCLE ", getLocalClassName() + " : onDestroy");
+        if (isFinishing()){
+            System.exit(0);
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("LIFECYCLE ", getLocalClassName() + " : onRestart");
     }
 
 }
